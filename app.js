@@ -1,4 +1,5 @@
-const API_BASE_URL = "http://localhost:3000";
+const API_BASE_URL =
+  "https://asambleaasistencia-avblh158v-alvarocotesjc-9801s-projects.vercel.app/";
 
 const searchSection = document.getElementById("searchSection");
 const searchInput = document.getElementById("searchInput");
