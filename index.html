@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registro de Firmas</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="bg-overlay"></div>
+    <main class="container">
+      <header class="hero card">
+        <img src="./fondo-login (1).png" alt="Logo Cootravir" class="hero__logo" />
+        <div class="hero__content">
+          <p class="hero__tag">COOTRAVIR C.T.A.</p>
+          <h1>Registro de Firmas Cootravir C.T.A.</h1>
+          <p class="subtitle">Control de asistencia digital para asambleas con firma electrónica segura.</p>
+        </div>
+      </header>
+
+      <form id="signatureForm" class="card">
+        <div id="searchSection">
+          <label for="searchInput">Buscar delegado (nombre o documento)</label>
+          <div class="search-box">
+            <input id="searchInput" type="text" placeholder="Ej: Juan Perez o 12345678" />
+            <ul id="resultsList" class="results-list" hidden></ul>
+          </div>
+        </div>
+
+        <div id="selectedCard" class="selected-card" hidden>
+          <div class="selected-card__avatar" id="selectedInitials">--</div>
+          <div class="selected-card__info">
+            <p class="selected-card__label">Delegado seleccionado</p>
+            <p class="selected-card__name" id="selectedName">Ninguno</p>
+            <p class="selected-card__doc" id="selectedDoc">Documento: --</p>
+          </div>
+          <button id="changeDelegadoBtn" type="button" class="btn btn-small btn-light">
+            Cambiar
+          </button>
+        </div>
+
+        <label for="signatureCanvas">Firma</label>
+        <canvas id="signatureCanvas" width="800" height="260" aria-label="Area de firma"></canvas>
+
+        <div class="actions">
+          <button id="clearBtn" type="button" class="btn btn-secondary">Limpiar</button>
+          <button id="saveBtn" type="submit" class="btn">Guardar firma</button>
+        </div>
+      </form>
+
+      <section class="card">
+        <div class="section-header">
+          <h2>Resumen de asistencia</h2>
+          <button id="exportActaBtn" type="button" class="btn btn-small">
+            Exportar acta PDF
+          </button>
+        </div>
+        <div class="stats-grid">
+          <article class="stat-card">
+            <p class="stat-card__label">Total delegados</p>
+            <p class="stat-card__value" id="totalDelegados">0</p>
+          </article>
+          <article class="stat-card">
+            <p class="stat-card__label">Firmados</p>
+            <p class="stat-card__value" id="totalFirmados">0</p>
+          </article>
+          <article class="stat-card">
+            <p class="stat-card__label">Faltan</p>
+            <p class="stat-card__value" id="totalFaltan">0</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
